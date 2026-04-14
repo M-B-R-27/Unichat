@@ -1,0 +1,29 @@
+<html lang="es ">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MI CHAT</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- ✅ Correcto — van antes de </body> -->
+    <script src="/socket.io/socket.io.js"></script>
+    <script defer src="script.js"></script>
+  </head>
+  <body>
+    <!-- Pantalla para pedir el nombre -->
+    <div id="login-container">
+      <h2>¿Cómo te llamas?</h2>
+      <input id="nombre-input" type="text" placeholder="Tu nombre..." />
+      <button id="btn-entrar">Entrar al chat</button>
+    </div>
+
+    <!-- Chat (oculto hasta que ingreses tu nombre) -->
+    <div id="chat-container" style="display: none">
+      <div id="header">Mi chat en tiempo real</div>
+      <div id="mensajes"></div>
+      <div id="input-area">
+        <input id="input" type="text" placeholder="Escribe un mensaje..." />
+        <button id="btn-enviar">Enviar</button>
+      </div>
+    </div>
+  </body>
+</html>
