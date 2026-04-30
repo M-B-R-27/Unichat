@@ -123,3 +123,15 @@ body {
     margin-bottom: 2px; 
     padding-left: 4px; 
 }
+
+#btn-adjuntar {
+  font-size: 20px;
+  cursor: pointer;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+}
+
+#btn-adjuntar:hover {
+  opacity: 0.7;
+}
