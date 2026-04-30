@@ -42,13 +42,9 @@ io.on("connection", (socket) => {
 
   // Escucha mensajes que lleguen con el nombre "mensaje"
   // "socket.on" = "cuando recibas esto, haz aquello"
-  socket.on("mensaje", (texto) => {
-    // Muestra en la terminal qué mensaje llegó
-    console.log("💬 Mensaje recibido: " + texto);
-
-    // Reenvía el mensaje a TODOS los conectados
-    // "io.emit" = "manda esto a todos"
-    io.emit("mensaje", texto);
+  socket.on("mensaje", (datos) => {
+    console.log("💬 Mensaje recibido: " + datos.texto);
+    io.emit("mensaje", datos);
   });
 
   // Cuando alguien se desconecte
