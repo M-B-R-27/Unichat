@@ -126,6 +126,17 @@ fileInput.addEventListener("change", () => {
   const archivo = fileInput.files[0];
   if (!archivo) return;
 
+  // Límite de tamaño: 10MB para imágenes/audio/docs, 30MB para videos
+  const esVideo = archivo.type.startsWith("video");
+  const limiteBytes = esVideo ? 30 * 1024 * 1024 : 10 * 1024 * 1024;
+  const limiteMB = esVideo ? "30MB" : "10MB";
+
+  if (archivo.size > limiteBytes) {
+    alert(`❌ Archivo muy grande. Máximo permitido: ${limiteMB}`);
+    fileInput.value = "";
+    return;
+  }
+
   const reader = new FileReader();
   reader.onload = () => {
     const base64 = reader.result;
